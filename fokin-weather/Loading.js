@@ -1,10 +1,11 @@
 import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 
+
 export default function Loading() {
     return (<View style={style.container}>
         <Text style={style.text}>
-            Getting the today's weahter
+            Getting the today's weahterrr3
         </Text>
     </View>
     );
