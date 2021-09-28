@@ -1,9 +1,11 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View, StatusBar} from "react-native";
 
 
 export default function Loading() {
-    return (<View style={style.container}>
+    return (
+    <View style={style.container}>
+        <StatusBar barStyle="dark-content"/>
         <Text style={style.text}>
             Getting the today's weahter5
         </Text>
