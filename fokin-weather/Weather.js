@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
 import PropTypes from "prop-types";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const weatherOptions = {
     Thunderstorm: {
@@ -70,22 +70,25 @@ const weatherOptions = {
 export default function Weather({ temp, condition }) {
     return (
             <LinearGradient
-                // Button Linear Gradient
                 colors={weatherOptions[condition].gradient}
-                style={styles.container}>
+                style={styles.container}
+                >
                 
                 <StatusBar barStyle="light-content"/>
                 <View style={styles.halfContainer}>
                     <MaterialCommunityIcons 
                     size={96} 
                     name={weatherOptions[condition].iconName}
-                    color="white" />
+                    color="white" 
+                    />
                     <Text style={styles.temp}>{temp}º</Text>
                 </View>
 
-                <View style={{ ...styles.halfContainer, ...styles.textContainer}}>
+                <View style={styles.textContainer}>
                     <Text style={styles.title}>{weatherOptions[condition].title}</Text>
-                    <Text style={styles.subtitle}>{weatherOptions[condition].subtitle}</Text>
+                    <Text style={styles.subtitle}>
+                        {weatherOptions[condition].subtitle}
+                        </Text>
                 </View>
             </LinearGradient>
     );
@@ -109,13 +112,11 @@ Weather.propTypes = {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 1
     },
     temp: {
         fontSize: 42,
-        color: 'white'
+        color: "white"
     },
     halfContainer: {
         flex: 1,
@@ -126,15 +127,19 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 44,
         fontWeight: '300',
-        marginBottom: 10
+        marginBottom: 10,
+        textAlign: 'left'
     },
     subtitle: {
         fontWeight: '600',
         color: 'white',
-        fontSize: 24
+        fontSize: 24,
+        textAlign: "left"
     },
     textContainer: {
-        paddingHorizontal: 20,
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        paddingHorizontal: 40,
+        justifyContent: 'center',
+        flex: 1
     }
 });
