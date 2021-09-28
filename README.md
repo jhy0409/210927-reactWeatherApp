@@ -1,1 +1,3 @@
-# 210927-reactWeatherApp
+# React Native활용 날씨 앱
+**프로젝트 다운**이 필요한 경우 **git clone을 하시기 바랍니다.**   
+(폴더크기 100mb 초과하여 zip파일로 단일 다운로드가 불가능합니다.)
